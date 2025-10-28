@@ -15,9 +15,23 @@ Sistema de controle de tarefas com acompanhamento de tempo, voltado para uso pes
 ---
 
 ## 🗄️ Banco de Dados
-O sistema utiliza **Oracle Database 21c XE**.  
-O script de criação das tabelas está em:  
+- O sistema utiliza **Oracle Database 21c XE**.  
+- O script de criação das tabelas está em:
+
 📂 `sql/sql.sql`
+
+📋 Tabelas (resumo)
+
+ | Tabela                | Finalidade                                                                      |
+ | --------------------- | ------------------------------------------------------------------------------- |
+ | **USUARIO**           | Armazena quem usa o sistema.                                                    |
+ | **STATUS_TAREFA**     | Status (A Fazer, Em Progresso, Pausada, Concluída, Cancelada).                  |
+ | **PRIORIDADE**        | Nível de urgência (Baixa, Média, Alta, Urgente).                                |
+ | **TAREFA**            | Registro principal: título, descrição, prazo, status, prioridade, responsáveis. |
+ | **APONTAMENTO_TEMPO** | Intervalos de trabalho (início/fim, minutos calculados).                        |
+ | **CONTAGEM_ATIVA**    | Indica contagem de tempo aberta por (usuário, tarefa).                          |
+ | **HISTORICO_STATUS**  | Auditoria das mudanças de status.                                               |
+
 
 ---
 
