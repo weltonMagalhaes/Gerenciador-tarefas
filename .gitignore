@@ -1,0 +1,33 @@
+# Compilação
+target/
+build/
+out/
+
+# Configurações do IDE
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+
+# Logs
+*.log
+logs/
+spring.log
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.tmp
+*.bak
+*.swp
+
+# Maven Wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# Credenciais e senhas
+application-*.yml
+application-*.properties
