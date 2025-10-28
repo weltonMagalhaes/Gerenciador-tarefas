@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]       # rode quando fizer push na main
+  pull_request:
+    branches: [ "main" ]       # e em PRs contra a main
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Temurin JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: 'maven'       # acelera builds
+
+      - name: Build & Test (Maven)
+        run: mvn -B -U -DskipTests=false clean verify
+
+      - name: Publicar artefato (JAR/WAR)
+        uses: actions/upload-artifact@v4
+        with:
+          name: pacote
+          path: target/*.?ar   # pega jar ou war
